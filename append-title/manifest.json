@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "PhDify Append",
+  "version": "1.0",
+
+  "description": "Adds the title \", Ph.D.\" to all untitled instances of everyone's favorite CSCI 201 professor",
+
+  "icons": {
+    "48": "icons/jmiller_phd.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*"],
+      "js": ["append-title.js"]
+    }
+  ]
+
+}
