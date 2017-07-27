@@ -38,14 +38,40 @@ RegExp.prototype.notFollowedBy = function (regex) {
 	return this.chain(new RegExp("(?!" + regex.source + ")"));
 };
 
-var miller_regex = /(J\.?|Jeff|Jeffrey)\s+Miller/gi;
-var miller_regex_lower = /j_*miller/gi;
-var miller_comma = /(Miller)(,\s+J(\.|eff(rey)?)?)/g;
+function globalize(regex) {
+	if (regex.global)
+		return regex;
+	return new RegExp(regex.source || regex, (regex.flags || '') + 'g');
+}
 
-var PHD_MATCH = /(?:,(_|\s)*)?Ph\.?[^\S\n]*D/gi;
-var untitled_miller_regex = miller_regex.notFollowedBy(PHD_MATCH);
+function ignoreCase(regex) {
+	if (regex.ignoreCase)
+		return regex;
+	return new RegExp(regex.source || regex, (regex.flags || '') + 'i');
+}
+
+function ignoreCaseGlobally(regex) {
+	if (regex.ignoreCase)
+		return globalize(regex);
+	if (regex.global)
+		return ignoreCase(regex);
+	return new RegExp(regex.source || regex, (regex.flags || '') + 'gi');
+}
+
+RegExp.prototype.globalize = function () { return globalize(this); };
+
+RegExp.prototype.makeCaseInsensitive = function () { return ignoreCase(this); };
+
+RegExp.prototype.makeGlobalAndCaseInsensitive = function() { return ignoreCaseGlobally(this); };
+
+var miller_regex = /(J\.?|Jeff|Jeffrey)\s+Miller/gi;
+var miller_regex_lower = /j\.?[_\s]*miller/gi;
+var miller_comma = /(Miller)(,\s*J(\.|eff(rey)?)?)/g;
+
+var PHD_MATCH = /(?:(_*|,\s*))?Ph\.?[^\S\n]*D/gi;
+var untitled_miller_regex = miller_regex.notFollowedBy(PHD_MATCH).makeGlobalAndCaseInsensitive();
 //console.log("untitled miller is", untitled_miller_regex);
-var untitled_miller_lower = miller_regex_lower.notFollowedBy(PHD_MATCH);
+var untitled_miller_lower = miller_regex_lower.notFollowedBy(PHD_MATCH).makeCaseInsensitive();
 
 
 function macroAppend(text, suffix) {
@@ -59,6 +85,12 @@ function appendPhDSimple(text) {
 
 function append_phd(text) {
 	return macroAppend(text, "_phd");
+}
+
+function insertTextAfterFirstMatch(text, infix, p1, p2) {
+	console.log("Inserting", "\"" + infix + "\"", "into", "\'" + text + "\'."); 
+	// return text.replaceAll(regex, "$1 " + infix + "$2");
+	return p1 + ' ' + infix + p2;
 }
 
 // window.console.log("LEEE");
@@ -94,15 +126,12 @@ while (currentNode = ni.nextNode()) {
 	if (!(currentNode.children[0])) {
 		//window.console.log(currentNode.nodeName);
 		currentNode.textContent = PhDify(currentNode.textContent);
-	} /*
-	else {
-		window.console.log(currentNode.nodeType, currentNode.innerHTML);
 	}
-	*/
 }
 
 function PhDify(str) {
 	return str.replace(untitled_miller_regex, appendPhDSimple)
 		.replace(untitled_miller_lower, append_phd);
+		.replace(insertTextAfterFirstMatch)
 		// .replace(miller_comma, function(match, p1, p2) { return p1 + " Ph.D." + p2;})
 }
