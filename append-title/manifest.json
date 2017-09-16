@@ -14,11 +14,11 @@
   "content_scripts": [
     {
       "matches": ["file:///*"],
-      "js": ["append-title.js"]
+      "js": ["regexp-lib.js", "append-title.js"]
     },
     {
       "matches": ["*://*.usc.edu/*"],
-      "js": ["append-title.js"]
+      "js": ["regexp-lib.js", "append-title.js"]
     }
   ],
 
