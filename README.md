@@ -1,4 +1,4 @@
-#PhDify
+##PhDify
 
 A browser extension to add a proper title to our favorite CSCI 201 professor.
 
@@ -10,7 +10,9 @@ Add the extension by building from a local copy as explained at these links:
 * [Opera](https://dev.opera.com/extensions/basics/)
 * More to come soon.
 
-Then test it on sample.html in the root of this directory! 
+Then test it on sample.html in the root of this directory! Also try it on [the USC schedule of classes for Computer Science][schedule], for CSCI 201 and 401.
+
+[schedule]: http://classes.usc.edu/term-20173/classes/csci "litty"
 
 ![Before pic][before]
 

@@ -1,0 +1,11 @@
+{
+	"extensionName": {
+		"message": "PhDify Append",
+		"description": "Name of the extension."
+	},
+
+	"extensionDescription": {
+		"message": "Adds the title \", Ph.D.\" to all untitled instances of everyone's favorite CSCI 201 professor",
+		"description": "Description of the extension."
+	},
+}
