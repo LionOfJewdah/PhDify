@@ -61,17 +61,6 @@ RegExp.prototype.makeCaseInsensitive = function () { return ignoreCase(this); };
 
 RegExp.prototype.makeGlobalAndCaseInsensitive = function() { return ignoreCaseGlobally(this); };
 
-var miller_regex = /(J.?|Jeff|Jeffrey)\s*Miller/gi;
-var miller_regex_lower = /j.?[_\s]*miller/gi;
-var miller_comma = /(Miller)(,\s*J(.|eff(rey)?)?)/g;
-
-var PHD_MATCH = /(?:(_*|,\s*))?Ph.?[^\Sn]*D/gi;
-var PHD_MATCH_CASE_INSENSITIVE = /(?:(_*|,\s*))?[pP][hH].?[^\Sn]*[dD]/g;
-
-var untitled_miller_regex = miller_regex.notFollowedBy(PHD_MATCH).makeGlobalAndCaseInsensitive();
-// console.log("untitled miller is: " + untitled_miller_regex);
-var untitled_miller_lower = miller_regex_lower.notFollowedBy(PHD_MATCH_CASE_INSENSITIVE).globalize();
-
 
 function macroAppend(text, suffix) {
 	return text + suffix;
