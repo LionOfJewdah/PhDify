@@ -1,8 +1,9 @@
 {
 	"manifest_version": 2,
 	"name": "PhDify Append",
-	"version": "0.0.5a",
-  "versionName": "Early release beta 5a",
+  "short_name": "PhDify",
+	"version": "0.0.5.1",
+  "version_name": "Early release beta 5a",
 
 	"default_locale": "en",
 	"description": "Adds the title \", Ph.D.\" to all untitled instances of everyone's favorite CSCI 201 professor",
@@ -10,7 +11,8 @@
 	"icons": {
 		"48": "icons/jmiller_phd_48.png",
 		"96": "icons/jmiller_phd_96.png",
-		"100": "icons/jmiller_phd.jpg"
+    "100": "icons/jmiller_phd.jpg",
+    "128": "icons/jmiller_phd_128.jpg"
 	},
 
 	"content_scripts": [
