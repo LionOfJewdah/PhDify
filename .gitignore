@@ -1,5 +1,8 @@
 # Prerequisites
 *.d
+
+# Zip files
+*.zip
 *.pem
 *.crx
 *.bak
