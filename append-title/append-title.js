@@ -64,7 +64,7 @@ RegExp.prototype.makeCaseInsensitive = function () { return ignoreCase(this); };
 
 RegExp.prototype.makeGlobalAndCaseInsensitive = function() { return ignoreCaseGlobally(this); };
 
-var miller_regex = /(J.?|Jeff|Jeffrey)\s+Miller/gi;
+var miller_regex = /(J.?|Jeff|Jeffrey)\s*Miller/gi;
 var miller_regex_lower = /j.?[_\s]*miller/gi;
 var miller_comma = /(Miller)(,\s*J(.|eff(rey)?)?)/g;
 
