@@ -15,7 +15,17 @@
     {
       "matches": ["file:///*"],
       "js": ["append-title.js"]
+    },
+    {
+      "matches": ["*://*.usc.edu/*"],
+      "js": ["append-title.js"]
     }
-  ]
+  ],
+
+  "applications": {
+    "gecko": {
+      "id": "dsilvers@usc.edu"
+    }
+  }
 
 }

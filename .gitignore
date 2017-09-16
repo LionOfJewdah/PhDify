@@ -1,5 +1,8 @@
 # Prerequisites
 *.d
+*.pem
+*.crx
+*.bak
 
 # Compiled Object files
 *.slo
