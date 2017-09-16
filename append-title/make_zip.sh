@@ -1,0 +1,1 @@
+zip -r ../PhDify.zip * -x "make_zip.sh"

@@ -7,6 +7,9 @@
 *.crx
 *.bak
 
+# Screenshots folder
+screenshots/
+
 # Compiled Object files
 *.slo
 *.lo

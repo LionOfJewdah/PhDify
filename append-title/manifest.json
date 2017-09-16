@@ -2,8 +2,8 @@
 	"manifest_version": 2,
 	"name": "PhDify Append",
   "short_name": "PhDify",
-	"version": "0.0.5.1",
-  "version_name": "Early release beta 5a",
+	"version": "0.0.6.1",
+  "version_name": "Early release beta 6a",
 
 	"default_locale": "en",
 	"description": "Adds the title \", Ph.D.\" to all untitled instances of everyone's favorite CSCI 201 professor",
@@ -21,7 +21,7 @@
 			"js": ["regexp-lib.js", "append-title.js"]
 		},
 		{
-			"matches": ["*://*.usc.edu/*"],
+			"matches": ["*://*.usc.edu/*", "*://*.piazza.com/*"],
 			"js": ["regexp-lib.js", "append-title.js"]
 		}
 	],
