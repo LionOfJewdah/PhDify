@@ -4,6 +4,8 @@ A browser extension to add a proper title to our favorite CSCI 201 professor.
 
 This is a cross-platform, cross-browser extension written using the [WebExtensions API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions). That's pretty lit IMO. If you're a big nerd, you might want to look at [the big new cross-platform extension API that's coming](https://browserext.github.io/browserext/).
 
+Note: when you install this extension, it may say "this extension wants to access all your data on sites within the usc.edu and piazza.com domains" or similar. Rest assured it is not collecting anything. All it does is textual substitution. You can see for yourself in regex-lib.js and append-title.js. It simply gives this notice because I have enabled the textual substitution script to run on those domains and no others.
+
 You can install the latest release versions of the extension from: 
 * [Firefox][ffinstall]
 * [Chrome][crinstall]
