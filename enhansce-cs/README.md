@@ -1,4 +1,4 @@
-# PhDify Append
+# PhDify Enhansce
 
 A browser extension to add a proper title to our favorite CSCI 201 professor.
 

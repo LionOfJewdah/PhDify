@@ -1,0 +1,11 @@
+{
+	"extensionName": {
+		"message": "PhDify Enhansce",
+		"description": "Name of the extension."
+	},
+
+	"extensionDescription": {
+		"message": "EnhanSCes the CS experience of USC students graphically",
+		"description": "Description of the extension."
+	}
+}

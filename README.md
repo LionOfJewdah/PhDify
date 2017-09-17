@@ -5,3 +5,8 @@ A collection of browser extensions to add a proper title to our favorite CSCI 20
 These are cross-platform, cross-browser extensions written using the [WebExtensions API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions). That's pretty lit IMO. If you're a big nerd, you might want to look at [the big new cross-platform extension API that's coming](https://browserext.github.io/browserext/).
 
 Check the README.md in each extension's subdirectory to see latest development and release versions of the extensions. 
+
+## Extensions in the suite:
+* [PhDify Append](https://github.com/LionOfJewdah/PhDify/tree/master/append-title)
+* [PhDify Enhansce](https://github.com/LionOfJewdah/PhDify/tree/master/enhansce-cs)
+* More coming

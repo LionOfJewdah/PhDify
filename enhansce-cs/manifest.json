@@ -1,0 +1,41 @@
+{
+	"manifest_version": 2,
+	"name": "PhDify Enhansce",
+	"short_name": "PhDifyImg",
+	"version": "0.0.5.1",
+	"version_name": "Early release beta 5a",
+
+	"default_locale": "en",
+	"description": "EnhanSCes the CS experience of USC students graphically through image augmentation",
+
+	"icons": {
+		"32": "icons/advice_jmphd_32x32.png",
+		"48": "icons/advice_jmphd_48x48.png",
+		"64": "icons/advice_jmphd_64x64.png",
+		"96": "icons/advice_jmphd_96x96.png",
+		"128": "icons/advice_jmphd_128x128.png",
+		"420": "icons/advice_jmphd.png",
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["file:///*"]
+			// , // TODO
+			// "js": ["regexp-lib.js", "append-title.js"]
+		},
+		{
+			"matches": ["*://*.usc.edu/*", "*://*.piazza.com/*"]
+			// , // TODO
+			// "js": ["regexp-lib.js", "append-title.js"]
+		}
+	],
+
+	"homepage_url": "https://dsilv.io",
+
+	"applications": {
+		"gecko": {
+			"id": "dsilvers@usc.edu"
+		}
+	}
+
+}
